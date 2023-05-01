@@ -1,4 +1,8 @@
+#ifndef ALUNO_H
+#define ALUNO_H
+
 #include <string>
+#include <iostream>
 
 class Aluno{
     private:
@@ -9,19 +13,21 @@ class Aluno{
         float nota3;
     public:
         Aluno();
+        Aluno(std::string nom, int matricul, float not1, float not2, float not3);
         ~Aluno();
-        float calculaMedia();
-
+        float calculaMedia(void);
         std::string getNome();
         int getMatricula();
         float getNota1();
         float getNota2();
         float getNota3();
 
-        void setNome(std::string nome);
-        void setMatricula(int matricula);
-        void setNota1(float nota1);
-        void setNota2(float nota2);
-        void setNota3(float nota3);
+        void setNome(std::string nom);
+        void setMatricula(int matricul);
+        void setNota1(float not1);
+        void setNota2(float not2);
+        void setNota3(float not3);
 
 };
+
+#endif // ALUNO_H
