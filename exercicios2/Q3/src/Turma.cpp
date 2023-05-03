@@ -27,8 +27,9 @@
         void Turma::setVagas(int vag){
             vagas = vag;
         }
-        void Turma::setAlunos(Aluno *listaAlu, int quantidadeAlunos){
+        void Turma::setAlunos(Aluno &listaAlu, int quantidadeAlunos){
             if(quantidadeAlunos<=vagas){
+                //fazer um for aqui pra percorrer e inserir com aritmetica de ponteiros
                 alunos = listaAlu;
                 vagas -= quantidadeAlunos;
                 std::cout << quantidadeAlunos<<"aluno(s) foram inseridos" << std::endl;

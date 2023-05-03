@@ -8,7 +8,6 @@ class Turma{
     private:
         int capacidade;
         int vagas;
-        //tentando fazer desse 1º jeito. Talvez melhor usar vector
         Aluno *alunos;
         bool switchCampoEscol(int indiceJ, int indiceI, std::string campo);
     public:
@@ -23,7 +22,7 @@ class Turma{
 
         void setCapacidade(int cap);
         void setVagas(int vag);
-        void setAlunos(Aluno *listaAlu, int quantidadeAlunos);
+        void setAlunos(Aluno &listaAlu, int quantidadeAlunos);
 
         
 
