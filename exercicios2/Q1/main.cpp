@@ -1,11 +1,10 @@
 #include <iostream>
-int trib(int number){
-    if(number<=2){
-        return (number-1>=0 ? number-1 : 0);
-    }
-    return (trib(number-1)+trib(number-2)+trib(number-3)); 
-}
+#include "Tribo.h"
 
 int main(){
-    std::cout << trib(1);
+    Tribo objetoTribo;
+    for(int i =0;i<20;i++){
+        std::cout <<"n= "<<i<<", " <<objetoTribo.getTribonacci(i) << std::endl;
+    }
+
 }
