@@ -22,9 +22,7 @@ class Turma{
 
         void setCapacidade(int cap);
         void setVagas(int vag);
-        void setAlunos(Aluno &listaAlu, int quantidadeAlunos);
-
-        
-
+        void setAlunos(Aluno listaAlu[], int quantidadeAlunos);
+        void addAlunos(Aluno listaAlu[], int quantidadeAlunos);
 };
 #endif // ALUNO_H

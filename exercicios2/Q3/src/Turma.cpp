@@ -8,7 +8,7 @@
             alunos = new Aluno[vagas];
         }
         Turma::~Turma(){
-
+            delete []alunos;
         }
 
         int Turma::getCapacidade(){
@@ -22,21 +22,66 @@
         }
 
         void Turma::setCapacidade(int cap){
-            capacidade = cap;
+            int quantidadeAtualAlunos = capacidade-vagas;
+            //capacidade menor que o numero de alunos
+            if(cap<quantidadeAtualAlunos){
+                std::cout << "não é possivel reduzir a capacidade de turma para um numero" <<
+                "menor que o de alunos já existente nelas" << std::endl;
+            } else{
+                capacidade = cap;
+                vagas = capacidade-quantidadeAtualAlunos;
+            }
         }
         void Turma::setVagas(int vag){
-            vagas = vag;
+            int quantidadeAtualAlunos = capacidade-vagas;
+            if(vag-quantidadeAtualAlunos<0){
+                std::cout << "a quantidade de vagas não é o suficiente" << std::endl;
+            } else{
+                vagas = vag-quantidadeAtualAlunos;
+
+            }
         }
-        void Turma::setAlunos(Aluno &listaAlu, int quantidadeAlunos){
-            if(quantidadeAlunos<=vagas){
-                //fazer um for aqui pra percorrer e inserir com aritmetica de ponteiros
-                alunos = listaAlu;
-                vagas -= quantidadeAlunos;
+        void Turma::setAlunos(Aluno listaAlu[], int quantidadeAlunos){
+            if(quantidadeAlunos<=capacidade){
+                delete []alunos;
+                alunos = new Aluno[quantidadeAlunos];
+                vagas = capacidade-quantidadeAlunos;
+                for(int i =0;i<quantidadeAlunos;i++){
+                    *(alunos+i) = listaAlu[i];
+                }
                 std::cout << quantidadeAlunos<<"aluno(s) foram inseridos" << std::endl;
             }else{
                 std::cout << "não existem vagas suficientes, inserção sem sucesso" << std::endl;
             }
             
+        }
+
+        void Turma::addAlunos(Aluno listaAlu[], int quantidadeAlunos){
+            if(quantidadeAlunos<=vagas){
+                int quantidadeAntigaAlunos = capacidade-vagas;
+                int quantidadeNovaAlunos = quantidadeAntigaAlunos+quantidadeAlunos;
+                Aluno * pAuxiliarAluno;
+                pAuxiliarAluno = new Aluno[quantidadeNovaAlunos];
+                for(int i =0;i<quantidadeNovaAlunos;i++){
+                    if(i<quantidadeAntigaAlunos){
+                        *(pAuxiliarAluno+i) = *(alunos+i);
+                    } else{
+                        *(pAuxiliarAluno+i) = listaAlu[i-quantidadeAntigaAlunos];
+                    }
+                }
+                vagas-=quantidadeAlunos;
+                delete []alunos;
+                alunos = new Aluno[quantidadeNovaAlunos];
+                for(int i =0;i<quantidadeNovaAlunos;i++){
+                    *(alunos+i) = *(pAuxiliarAluno+i);
+                }
+                std::cout << quantidadeAlunos<<"aluno(s) foram adicionados" << std::endl;
+                for(int i =0;i<quantidadeNovaAlunos;i++){
+                    std::cout << alunos[i].getNome() << std::endl;
+                }
+            } else{
+                std::cout << "não existem vagas suficientes, inserção sem sucesso" << std::endl;
+            }
         }
 
         void Turma::imprimeAlunos(){
