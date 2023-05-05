@@ -1,0 +1,26 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Turma::imprimeAlunos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTurma.html#a7be47708514e0051695829452f281e4b",tooltip="Método para imprimir a lista de alunos existente no objeto."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Aluno::calculaMedia",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAluno.html#a77cc2b053f42a30507a528f3bae2777a",tooltip="Função que calcula a média das 3 notas do aluno."];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Aluno::getNome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAluno.html#a3b730c10688d6f5287614676e71f3f50",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Aluno::getNota1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAluno.html#adf6eaf859e37dbd2f0f0797300d951f9",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Aluno::getNota2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAluno.html#a665638aace216293a7947fe3625ac1bb",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Aluno::getNota3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAluno.html#ab01be4979eaa3875240093ef36bb85f5",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Turma::ordenaCampo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTurma.html#a3758b00242aee9ec17a867101cb4a073",tooltip="Método para ordenar o objeto alunos de acordo com um determinado campo da classe ALuno."];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Turma::switchCampoEscol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTurma.html#aeca03d247789a01e6bb00bd717f27640",tooltip="Método auxiliar interno para facilitar a comparação de alunos a partir de um determinado campo."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Turma::setAlunos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTurma.html#ad5b1b26e2e26aa4bd65129c953552a8d",tooltip="Método setter para o atributo alunos."];
+}

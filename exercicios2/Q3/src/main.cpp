@@ -1,4 +1,11 @@
-    #include "../include/Aluno.h"
+/**
+* @file main.cpp
+* @brief Arquivo cpp main, que contém testes  da classe Aluno e Turma, bem como seus métoods
+* @author Iago Gabriel Nobre de Macedo - 20220037927
+* @since 01/05/2023
+*/
+
+#include "../include/Aluno.h"
 #include "../include/Turma.h"
 #include <iostream>
 
@@ -15,7 +22,7 @@ int main(){
     turma.setAlunos(listaAlunos, quantidadeNovosAlunos);
     turma.imprimeAlunos();
     std::cout << "imprimindo após ordenar por nota: " << std::endl;
-    turma.ordenaCampo("matricula");
+    turma.ordenaCampo("nota");
     turma.imprimeAlunos();
 
     return 0;

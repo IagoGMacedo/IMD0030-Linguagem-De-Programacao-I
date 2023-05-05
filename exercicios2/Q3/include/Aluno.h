@@ -1,4 +1,11 @@
 #ifndef ALUNO_H
+/**
+* @file Aluno.h
+* @brief Arquivo header Aluno, que contém a definição da classe Aluno e seus métodos
+* @author Iago Gabriel Nobre de Macedo - 20220037927
+* @since 01/05/2023
+*/
+
 #define ALUNO_H
 
 #include <string>
@@ -7,16 +14,16 @@
 class Aluno{
     private:
         std::string nome;
-        int matricula;
-        float nota1;
-        float nota2;
-        float nota3;
+        int matricula; 
+        float nota1; 
+        float nota2; 
+        float nota3; 
     public:
         Aluno();
-        Aluno(std::string nom, int matricul, float not1, float not2, float not3);
+        Aluno(std::string nom, int matricul, float not1, float not2, float not3); 
         ~Aluno();
-        float calculaMedia(void);
-        std::string getNome();
+        float calculaMedia(void); 
+        std::string getNome(); 
         int getMatricula();
         float getNota1();
         float getNota2();

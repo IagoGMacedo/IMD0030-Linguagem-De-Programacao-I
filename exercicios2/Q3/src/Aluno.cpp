@@ -1,11 +1,22 @@
+/**
+* @file Aluno.cpp
+* @brief Arquivo cpp Aluno, que contém a implementação da classe Aluno e seus métodos
+* @author Iago Gabriel Nobre de Macedo - 20220037927
+* @since 01/05/2023
+*/
+
+
 #include "../include/Aluno.h"
 #include <iostream>
+        /** @brief Construtor da classe sem passagem de parametros */
         Aluno::Aluno(){
             nota1 = 0;
             nota2 = 0;
             nota3 = 0;
         }
-
+        /** @brief Construtor da classe com passagem de parâmetros para cada atributo 
+         *  @param nom Nome do aluno, matricul Matricula do aluno, not1 nota 1, not2 nota 2, not3 nota3
+        */
         Aluno::Aluno(std::string nom, int matricul, float not1, float not2, float not3){
             nome = nom;
             matricula = matricul;
@@ -13,9 +24,13 @@
             nota2 = not2;
             nota3 = not3;
         }
+        /** @brief Destrutor da classe */
         Aluno::~Aluno(){
 
         }
+        /** @brief Função que calcula a média das 3 notas do aluno
+         *  @return A média aritmética das 3 notas do aluno
+        */
         float Aluno::calculaMedia(){
             return (nota1+nota2+nota3)/3;
         }
