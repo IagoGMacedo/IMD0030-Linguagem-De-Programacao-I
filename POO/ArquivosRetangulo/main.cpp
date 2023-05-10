@@ -20,7 +20,7 @@ int main(){
     std::cout << retangulo2.getAltura() << std::endl;
     std::cout << retangulo2.getLargura() << std::endl;
 
-
+    //passagem por referencia de um retangulo já criado
     Retangulo *retangulo3 = new Retangulo(retangulo2);
 
     std::cout << retangulo3->getAltura() << std::endl;
@@ -30,6 +30,9 @@ int main(){
     como um contador de instâncias. Independente da quantidade de objetos
     declarados, atributos e metodos estaticos tem instancia unica */
     std::cout << "quantidade total de instancias: " << Retangulo::getTotal() << std::endl;
+
+    int resultadoSoma;
+    
 
     
     return 0;

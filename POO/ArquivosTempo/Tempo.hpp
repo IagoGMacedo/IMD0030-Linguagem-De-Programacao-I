@@ -12,7 +12,7 @@ class Tempo{
         short getMinutos();
         short getSegundos();
         Tempo operator+(Tempo &time);
-        friend std::istream& operator >> (std::istream &i, Tempo &time);
+        //friend std::istream& operator >> (std::istream &i, Tempo &time);
         friend std::ostream& operator << (std::ostream &o, Tempo &time);
 };
 
@@ -45,15 +45,16 @@ Tempo Tempo::operator+(Tempo &time){
     short horas = this->horas+time.getHoras();
     short minutos = this->minutos+time.getMinutos();
     short segundos = this->segundos+time.getSegundos();
+    //todo operador assim retorna um objeto do mesmo tipo
     return Tempo(horas, minutos, segundos);
 }
 //sobrecarga do operador << para output
 //repare que eles não são acessados de tempo, por isso são friends
 
- std::istream& operator>> (std::istream &i, Tempo &time){
+ /*std::istream& operator>> (std::istream &i, Tempo &time){
     i >> time.horas >> time.minutos >> time.segundos;
     return i;
- };
+ };*/
  std::ostream& operator<< (std::ostream &o, Tempo &time){
     o<< time.getHoras() <<":"<<time.getMinutos()<<":"<<time.getSegundos();
     return o;
