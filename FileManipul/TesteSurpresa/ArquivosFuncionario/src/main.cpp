@@ -42,14 +42,15 @@ int lerArquivoFuncionarios(){
             for(int i =0;i<quantidadeFuncionarios;i++){
                 listaFuncionarioRecuperados[i].printFuncionario();
             }
-
+            return 1;
 
 	}
 	else{
 		cout<<"Erro ao ler dado do arquivo...\n";
-		return -1;
 	}
 	file.close();	
+    return -1;
+
 }
 
 
@@ -72,9 +73,9 @@ void adicionaFuncionario(Funcionario novoFuncionario){
 
 int main(){
 
-    Funcionario *funcionario3 = new Funcionario("jessica",1300);
+    Funcionario *funcionario3 = new Funcionario("iago",1300);
     Funcionario *funcionario4 = new Funcionario("Humberto",200);
-    Funcionario *funcionario5 = new Funcionario("Claudio",8000);
+    Funcionario *funcionario5 = new Funcionario("Claudio",100);
 
     adicionaFuncionario(*funcionario3);
     adicionaFuncionario(*funcionario4);
